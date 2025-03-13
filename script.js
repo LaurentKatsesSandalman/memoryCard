@@ -63,6 +63,7 @@ for (const card of allCards) {
 
     card.addEventListener('click', function () {
         if (card.classList.contains("flipped")) { }
+        else if (flippedCard === 2) { }
         else {
             flip(card);
             flippedCard++;
