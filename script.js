@@ -33,7 +33,7 @@ function compare() {
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {
             console.log(winCard)
-            winCard.setAttribute("class", "no-display");
+            winCard.setAttribute("class", "img-card no-display");
             winCard.setAttribute("Id", "");
         }
     }
