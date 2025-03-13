@@ -1,3 +1,12 @@
+
+//déclaration
+let flippedCard = 0;
+let paires = 0;
+let cardAId = "";
+let cardBId = "";
+const allCards = document.querySelectorAll(".img-card");
+
+//fonctions
 function flip(card) {
     card.setAttribute("class", "img-card-active" + " " + card.getAttribute("class"));
 
@@ -18,46 +27,69 @@ function flip(card) {
     }, 501)
 }
 
-let flippedCard = 0;
-let paires = 0;
-let cardAId = "";
-let cardBId = "";
-const allCards = document.querySelectorAll(".img-card");
+function compare() {
+    if (cardAId === cardBId) {
+        paires++;
+        const winPaire = document.querySelectorAll(".flipped")
+        for (let winCard of winPaire) {
+            console.log(winCard)
+            winCard.setAttribute("class", "no-display");
+            winCard.setAttribute("Id", "");
+        }
+    }
+    else {
+        const badA = document.querySelector("#cardA");
+        console.log(badA)
+        const badB = document.querySelector("#cardB");
+        badA.setAttribute("Id", "")
+        badB.setAttribute("Id", "")
+        badA.classList.remove("flipped");
+        badB.classList.remove("flipped");
+        flip(badA);
+        flip(badB);
+    }
+    console.log("before : flipped cards " + flippedCard);
+    flippedCard = 0;
+    console.log("after : flipped cards " + flippedCard);
+    cardAId = "";
+    cardBId = "";
 
+}
+//run
+
+console.log("start" + flippedCard)
 
 for (const card of allCards) {
 
     card.addEventListener('click', function () {
-        flip(card);
-        flippedCard++;
-        card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-        if (cardAId === "") {
-            cardAId = (card.getAttribute("class"))
-        }
-        else if (cardBId === "") {
-            cardBId = (card.getAttribute("class"))
+        if (card.classList.contains("flipped")) { }
+        else if (flippedCard === 2) { }
+        else {
+            flip(card);
+            flippedCard++;
+
+
+            if (cardAId === "") {
+                card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
+                card.setAttribute("Id", "cardA")
+                cardAId = (card.getAttribute("class"))
+                console.log(cardAId)
+            }
+            else if (cardBId === "") {
+                card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
+                card.setAttribute("Id", "cardB")
+                cardBId = (card.getAttribute("class"))
+                console.log(cardBId)
+            }
+            console.log("turn" + flippedCard)
+            if (flippedCard === 2) {
+                console.log("check" + flippedCard);
+                setTimeout(compare, 1500);
+
+            }
         }
     })
 }
 
-/*while (paires !== 10) {
-    if (flippedCard === 2) {
-        if (cardAId === cardBId) {
-            paires++;
-            const winPaire = document.querySelectorAll(`.${CardAId}`)
-            for (let winCard in winPaire) {
-                winCard.setAttribute("class", "no-display")
-            }
-        }
-        else {
-            const badA = document.querySelector(cardAId);
-            const badB = document.querySelector(cardBId);
-            badA.classList.remove("flipped");
-            badB.classList.remove("flipped");
-            flip(badA);
-            flip(badB);
-        }
-        flippedCard = 0;
-    }
 
-}*/
+
