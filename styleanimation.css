@@ -6,7 +6,9 @@ body {
     background-color: blue
 }
 
-
+.no-display {
+    display: none;
+}
 
 .img-card {
     width: 300px;
