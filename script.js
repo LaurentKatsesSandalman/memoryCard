@@ -40,7 +40,7 @@ for (const card of allCards) {
     })
 }
 
-while (paires !== 10) {
+/*while (paires !== 10) {
     if (flippedCard === 2) {
         if (cardAId === cardBId) {
             paires++;
@@ -60,4 +60,4 @@ while (paires !== 10) {
         flippedCard = 0;
     }
 
-}
+}*/
