@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blue
+}
+
+.no-display {
+    display: none;
+}
+
+.img-card {
+    width: 300px;
+    aspect-ratio: 1/1;
+    display: block;
+    margin: 10px;
+}
+
+.img-card-active {
+    animation: flip 0.5s linear 0s 1;
+}
+
+.floating-img {
+    padding: 30px;
+    background-color: black;
+}
+
+@keyframes flip {
+    0% {
+        transform: scaleX(1)
+    }
+
+    25% {
+        transform: scaleX(0.5)
+    }
+
+    50% {
+        transform: scaleX(0)
+    }
+
+    75% {
+        transform: scaleX(0.5)
+    }
+
+    100% {
+        transform: scaleX(1)
+    }
+}
