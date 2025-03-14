@@ -5,19 +5,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+}
+:root{
+    --color-shadow: #474545;
+    --color-bg:#aae4ff;         // les couleur ne sont pas bloquer je travail encore dessus 
+    --color-best: grey ;
+}
+body{
+    background-color:var(--color-bg) ;
 }
 .regles{
     text-align: center;
     font-family: 'Martel', serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     padding: 1rem;
 }
 h1{
     font-family: 'Irish Grover';
     text-align: center;
-    font-size: 64px;
-    text-shadow: 0px 1px 10px #474545;
+    font-size: 4rem;
+    text-shadow: 0 1px 10px var(--color-shadow);
 }
 .container{
     display: grid;
@@ -44,6 +51,6 @@ h1{
     
 }
 .best {
-    color: grey;
+    color: var(--color-best);
 }
 
