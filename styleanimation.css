@@ -7,7 +7,7 @@ body {
 }
 
 .no-display {
-    animation: validpaire 0.55s linear 0s 1;
+    animation: validpair 0.55s linear 0s 1;
     animation-fill-mode: forwards;
 }
 
@@ -53,7 +53,7 @@ body {
     }
 }
 
-@keyframes validpaire {
+@keyframes validpair {
     0% {
         transform: rotate(3deg);
         opacity: 1;
