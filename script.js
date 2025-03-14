@@ -59,6 +59,7 @@ for (const card of allCards) {
             flip(card);
             flippedCard++;
 
+
             if (cardAId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
                 card.setAttribute("id", "cardA")
@@ -71,6 +72,7 @@ for (const card of allCards) {
             }            
             if (flippedCard === 2) {                
                 setTimeout(compare, 1500);
+
             }
         }
     })
