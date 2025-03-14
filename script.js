@@ -1,4 +1,3 @@
-
 //déclaration
 let flippedCard = 0;
 let paires = 0;
@@ -31,36 +30,28 @@ function compare() {
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
-        for (let winCard of winPaire) {
-            console.log(winCard)
-            winCard.setAttribute("class", "no-display");
-            winCard.setAttribute("Id", "");
+        for (let winCard of winPaire) {           
+            winCard.setAttribute("class", "img-card no-display");
+            winCard.setAttribute("id", "");
         }
     }
     else {
-        const badA = document.querySelector("#cardA");
-        console.log(badA)
+        const badA = document.querySelector("#cardA");        
         const badB = document.querySelector("#cardB");
-        badA.setAttribute("Id", "")
-        badB.setAttribute("Id", "")
+        badA.setAttribute("id", "")
+        badB.setAttribute("id", "")
         badA.classList.remove("flipped");
         badB.classList.remove("flipped");
         flip(badA);
         flip(badB);
-    }
-    console.log("before : flipped cards " + flippedCard);
-    flippedCard = 0;
-    console.log("after : flipped cards " + flippedCard);
+    }   
+    flippedCard = 0;   
     cardAId = "";
     cardBId = "";
-
 }
+
 //run
-
-console.log("start" + flippedCard)
-
 for (const card of allCards) {
-
     card.addEventListener('click', function () {
         if (card.classList.contains("flipped")) { }
         else if (flippedCard === 2) { }
@@ -70,22 +61,17 @@ for (const card of allCards) {
 
             if (cardAId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("Id", "cardA")
-                cardAId = (card.getAttribute("class"))
-                console.log(cardAId)
+                card.setAttribute("id", "cardA")
+                cardAId = (card.getAttribute("class"))                
             }
             else if (cardBId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("Id", "cardB")
+                card.setAttribute("id", "cardB")
                 cardBId = (card.getAttribute("class"))
-                console.log(cardBId)
-            }
-            console.log("turn" + flippedCard)
-            if (flippedCard === 2) {
-                console.log("check" + flippedCard);
+            }            
+            if (flippedCard === 2) {                
                 setTimeout(compare, 1500);
             }
         }
     })
 }
-
