@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "fireworks": "^2.2.7",
+    "fireworks-js": "^2.10.8"
+  },
+  "type": "module",
+  "name": "memorycard",
+  "version": "1.0.0",
+  "description": "Memory card project with Sebastien try to add branches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaurentKatsesSandalman/memoryCard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaurentKatsesSandalman/memoryCard/issues"
+  },
+  "homepage": "https://github.com/LaurentKatsesSandalman/memoryCard#readme"
+}

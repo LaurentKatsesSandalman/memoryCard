@@ -17,12 +17,12 @@ body{
 }
 .regles{
     text-align: center;
-    font-family: 'Martel', serif;
+    font-family: 'Martel', sans-serif;
     font-size: 0.75rem;
     padding: 1rem;
 }
 h1{
-    font-family: 'Irish Grover';
+    font-family: 'Irish Grover', sans-serif;
     text-align: center;
     font-size: 4rem;
     text-shadow: 0 1px 10px var(--color-shadow);
@@ -57,12 +57,12 @@ h1{
 }
 
 .no-display {
-    animation: validpair 0.55s linear 0 1;
+    animation: validpair 0.55s linear 1;
     animation-fill-mode: forwards;
 }
 
 .img-card-active {
-    animation: flip 0.5s linear 0 1;
+    animation: flip 0.5s linear 1;
 }
 
 @keyframes flip {
