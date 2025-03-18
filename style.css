@@ -57,12 +57,12 @@ h1{
 }
 
 .no-display {
-    animation: validpair 0.55s linear 0 1;
+    animation: validpair 0.55s linear 1;
     animation-fill-mode: forwards;
 }
 
 .img-card-active {
-    animation: flip 0.5s linear 0 1;
+    animation: flip 0.5s linear 1;
 }
 
 @keyframes flip {

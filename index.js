@@ -1,5 +1,5 @@
 //modules
-import { Fireworks } from 'fireworks-js'
+//import fx from 'fireworks';
 
 //déclaration
 let flippedCard = 0;
@@ -7,9 +7,7 @@ let paires = 0;
 let cardAId = "";
 let cardBId = "";
 const allCards = document.querySelectorAll(".img-card");
-const container = document.querySelector('.container')
-const fireworks = new Fireworks(container, { delay: { min: 10, max: 15 }} )
-
+//const container = document.querySelector('.container')
 
 
 //fonctions
@@ -36,9 +34,11 @@ function flip(card) {
 function compare() {
     if (cardAId === cardBId) {
         paires++;
-        fireworks.start()
-// fireworks.pause()
-// fireworks.clear()
+       /*fx({
+            x: 50, // required
+            y: 50 // required
+
+          })*/
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {           
             winCard.setAttribute("class", "img-card no-display");
