@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/LaurentKatsesSandalman/memoryCard/issues"
   },
-  "homepage": "https://github.com/LaurentKatsesSandalman/memoryCard#readme"
+  "homepage": "https://github.com/LaurentKatsesSandalman/memoryCard#readme",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
 }
