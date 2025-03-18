@@ -1,8 +1,6 @@
-//modules
-//import fx from 'fireworks';
 
-//déclaration
-//variables
+//déclaration:
+//(a)variables
 let flippedCard = 0;
 let paires = 0;
 let cardAId = "";
@@ -14,9 +12,9 @@ let isFirst = true;
 let startTime;
 let endTime;
 let currentTime = 0;
-//selectors
+let timerInterval = null;
+//(b)selectors
 const allCards = document.querySelectorAll(".img-card");
-//const container = document.querySelector('.container')
 const selectCurrentMoves = document.querySelector(".current-moves")
 const selectCurrentTime = document.querySelector(".current-time")
 const selectBestMoves = document.querySelector(".best-moves")
@@ -48,15 +46,15 @@ function compare() {
     selectCurrentMoves.innerHTML = movesCurrent;
     if (cardAId === cardBId) {
         paires++;
-        /*fx({
-             x: 50, // required
-             y: 50 // required
- 
-           })*/
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {
             winCard.setAttribute("class", "img-card no-display");
             winCard.setAttribute("id", "");
+        }
+        if (paires === 10) {
+            playOn = false;
+            movesEnd = movesCurrent;
+            clearInterval(timerInterval);
         }
     }
     else {
@@ -98,7 +96,7 @@ for (const card of allCards) {
     card.addEventListener('click', function () {
         if (isFirst) {
             startTime = Date.now();
-            setInterval(() => {
+            timerInterval = setInterval(() => {
                 currentTime = Date.now() - startTime;
                 selectCurrentTime.innerHTML = displayTime(currentTime);
             }, 1000)
@@ -126,9 +124,10 @@ for (const card of allCards) {
 
             }
         }
-        if (paires === 5) {
+        /*if (paires === 10) {
             playOn = false;
-            movesEnd = movesCurrent
-        }
+            movesEnd = movesCurrent;
+            clearInterval(timerInterval);
+        }*/
     })
 }
