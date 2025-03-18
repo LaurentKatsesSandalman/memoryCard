@@ -17,12 +17,12 @@ body{
 }
 .regles{
     text-align: center;
-    font-family: 'Martel', serif;
+    font-family: 'Martel', sans-serif;
     font-size: 0.75rem;
     padding: 1rem;
 }
 h1{
-    font-family: 'Irish Grover';
+    font-family: 'Irish Grover', sans-serif;
     text-align: center;
     font-size: 4rem;
     text-shadow: 0 1px 10px var(--color-shadow);
