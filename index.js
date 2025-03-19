@@ -28,6 +28,10 @@ function remove(element) {
 
 function activate(element) {
     element.classList.remove("remove");
+    element.setAttribute("class", "appear " + element.getAttribute("class"))
+    setTimeout(function () {
+        element.classList.remove("appear");
+    }, 2501)
 }
 
 function flip(card) {
