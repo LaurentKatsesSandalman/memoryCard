@@ -92,10 +92,6 @@ footer {
     color: var(--color-span)
 }
 
-.remove {
-    display: none;
-}
-
 .play-btn {
     display: block;
     grid-column: span 4;
@@ -107,6 +103,11 @@ footer {
     border-radius: 50px;
     font-size: 1.5rem;
 }
+
+.remove {
+    display: none;
+}
+
 
 /* animations */
 .no-display {

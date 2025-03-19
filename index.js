@@ -14,6 +14,7 @@ let endTime;
 let currentTime = 0;
 let timerInterval = null;
 //(b)selectors
+const playBtn = document.querySelector(".play-btn")
 const allCards = document.querySelectorAll(".img-card");
 const selectCurrentMoves = document.querySelector(".current-moves")
 const selectCurrentTime = document.querySelector(".current-time")
@@ -21,6 +22,14 @@ const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
 
 //fonctions
+function remove(element) {
+    element.setAttribute("class", "remove " + element.getAttribute("class"))
+}
+
+function activate(element) {
+    element.classList.remove("remove");
+}
+
 function flip(card) {
     card.setAttribute("class", "img-card-active" + " " + card.getAttribute("class"));
 
@@ -92,6 +101,13 @@ function displayTime(timeInMS) {
 }
 
 //run
+playBtn.addEventListener('click', function () {
+    remove(playBtn)
+    for (const card of allCards) {
+        activate(card)
+    }
+})
+
 for (const card of allCards) {
     card.addEventListener('click', function () {
         if (isFirst) {
@@ -124,10 +140,5 @@ for (const card of allCards) {
 
             }
         }
-        /*if (paires === 10) {
-            playOn = false;
-            movesEnd = movesCurrent;
-            clearInterval(timerInterval);
-        }*/
     })
 }
