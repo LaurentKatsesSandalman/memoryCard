@@ -36,16 +36,18 @@ h1 {
 }
 
 .container {
+    width: min(85%, 500px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-self: center;
     padding: 1rem;
     background-color: var(--color-best);
+    aspect-ratio: 4/5;
 }
 
 .container img {
-    width: 70px;
-    height: 70px;
+    width: 95%;
+    aspect-ratio: 1/1;
     padding: 5%;
     justify-self: center;
 }
@@ -88,6 +90,22 @@ footer {
 
 .freepik {
     color: var(--color-span)
+}
+
+.remove {
+    display: none;
+}
+
+.play-btn {
+    display: block;
+    grid-column: span 4;
+    grid-row: span 5;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--color-footer);
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
 }
 
 /* animations */
