@@ -14,6 +14,7 @@ let endTime;
 let currentTime = 0;
 let timerInterval = null;
 //(b)selectors
+const playBtn = document.querySelector(".play-btn")
 const allCards = document.querySelectorAll(".img-card");
 const selectCurrentMoves = document.querySelector(".current-moves")
 const selectCurrentTime = document.querySelector(".current-time")
@@ -21,6 +22,18 @@ const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
 
 //fonctions
+function remove(element) {
+    element.setAttribute("class", "remove " + element.getAttribute("class"))
+}
+
+function activate(element) {
+    element.classList.remove("remove");
+    element.setAttribute("class", "appear " + element.getAttribute("class"))
+    setTimeout(function () {
+        element.classList.remove("appear");
+    }, 2501)
+}
+
 function flip(card) {
     card.setAttribute("class", "img-card-active" + " " + card.getAttribute("class"));
 
@@ -49,7 +62,7 @@ function compare() {
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {
             winCard.setAttribute("class", "img-card no-display");
-            winCard.setAttribute("id", "");
+            winCard.setAttribute("data-type", "");
         }
         if (paires === 10) {
             playOn = false;
@@ -58,10 +71,10 @@ function compare() {
         }
     }
     else {
-        const badA = document.querySelector("#cardA");
-        const badB = document.querySelector("#cardB");
-        badA.setAttribute("id", "")
-        badB.setAttribute("id", "")
+        const badA = document.querySelector('[data-type="cardA"]');
+        const badB = document.querySelector('[data-type="cardB"]');
+        badA.setAttribute("data-type", "")
+        badB.setAttribute("data-type", "")
         badA.classList.remove("flipped");
         badB.classList.remove("flipped");
         flip(badA);
@@ -92,6 +105,13 @@ function displayTime(timeInMS) {
 }
 
 //run
+playBtn.addEventListener('click', function () {
+    remove(playBtn)
+    for (const card of allCards) {
+        activate(card)
+    }
+})
+
 for (const card of allCards) {
     card.addEventListener('click', function () {
         if (isFirst) {
@@ -111,12 +131,12 @@ for (const card of allCards) {
 
             if (cardAId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("id", "cardA")
+                card.setAttribute("data-type", "cardA")
                 cardAId = (card.getAttribute("class"))
             }
             else if (cardBId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("id", "cardB")
+                card.setAttribute("data-type", "cardB")
                 cardBId = (card.getAttribute("class"))
             }
             if (flippedCard === 2) {
@@ -124,10 +144,5 @@ for (const card of allCards) {
 
             }
         }
-        /*if (paires === 10) {
-            playOn = false;
-            movesEnd = movesCurrent;
-            clearInterval(timerInterval);
-        }*/
     })
 }
