@@ -39,8 +39,8 @@ function activate(element) {
 }
 
 function shuffle(cardlist) {
-    let buffer = "";
-    let index = "0";
+    let buffer;
+    let index;
     for (let i = 0; i < cardlist.length; i++) {
         buffer = cardlist[i];
         index = Math.floor(Math.random() * cardlist.length);
