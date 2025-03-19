@@ -21,6 +21,9 @@ const selectCurrentMoves = document.querySelector(".current-moves")
 const selectCurrentTime = document.querySelector(".current-time")
 const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
+const giveupBtn = document.querySelector(".giveup-main")
+const cancelBtn = document.querySelector(".giveup-no")
+const confirmBtn = document.querySelector(".giveup-yes")
 
 //fonctions
 function remove(element) {
@@ -125,7 +128,27 @@ playBtn.addEventListener('click', function () {
         activate(allCards[i]);
         allCards[i].classList.add(deck[i]);
     }
+    giveupBtn.classList.remove("remove");
 })
+
+giveupBtn.addEventListener('click', function () {
+    remove(giveupBtn);
+    cancelBtn.classList.remove("remove");
+    confirmBtn.classList.remove("remove");
+})
+
+cancelBtn.addEventListener('click', function () {
+    remove(cancelBtn);
+    remove(confirmBtn);
+    giveupBtn.classList.remove("remove");
+})
+
+confirmBtn.addEventListener('click', function () {
+    location.reload();
+})
+
+
+
 
 for (const card of allCards) {
     card.addEventListener('click', function () {
