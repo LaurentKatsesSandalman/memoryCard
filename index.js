@@ -13,6 +13,7 @@ let startTime;
 let endTime;
 let currentTime = 0;
 let timerInterval = null;
+const deck = ["card0", "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card0", "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9"]
 //(b)selectors
 const playBtn = document.querySelector(".play-btn")
 const allCards = document.querySelectorAll(".img-card");
@@ -31,7 +32,19 @@ function activate(element) {
     element.setAttribute("class", "appear " + element.getAttribute("class"))
     setTimeout(function () {
         element.classList.remove("appear");
-    }, 2501)
+    }, 1501)
+}
+
+function shuffle(cardlist) {
+    let buffer = "";
+    let index = "0";
+    for (let i = 0; i < cardlist.length; i++) {
+        buffer = cardlist[i];
+        index = Math.floor(Math.random() * cardlist.length);
+        cardlist[i] = cardlist[index];
+        cardlist[index] = buffer;
+
+    }
 }
 
 function flip(card) {
@@ -106,9 +119,11 @@ function displayTime(timeInMS) {
 
 //run
 playBtn.addEventListener('click', function () {
-    remove(playBtn)
-    for (const card of allCards) {
-        activate(card)
+    shuffle(deck);
+    remove(playBtn);
+    for (let i = 0; i < allCards.length; i++) {
+        activate(allCards[i]);
+        allCards[i].classList.add(deck[i]);
     }
 })
 
