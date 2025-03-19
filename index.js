@@ -62,7 +62,7 @@ function compare() {
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {
             winCard.setAttribute("class", "img-card no-display");
-            winCard.setAttribute("id", "");
+            winCard.setAttribute("data-type", "");
         }
         if (paires === 10) {
             playOn = false;
@@ -71,10 +71,10 @@ function compare() {
         }
     }
     else {
-        const badA = document.querySelector("#cardA");
-        const badB = document.querySelector("#cardB");
-        badA.setAttribute("id", "")
-        badB.setAttribute("id", "")
+        const badA = document.querySelector('[data-type="cardA"]');
+        const badB = document.querySelector('[data-type="cardB"]');
+        badA.setAttribute("data-type", "")
+        badB.setAttribute("data-type", "")
         badA.classList.remove("flipped");
         badB.classList.remove("flipped");
         flip(badA);
@@ -131,12 +131,12 @@ for (const card of allCards) {
 
             if (cardAId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("id", "cardA")
+                card.setAttribute("data-type", "cardA")
                 cardAId = (card.getAttribute("class"))
             }
             else if (cardBId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
-                card.setAttribute("id", "cardB")
+                card.setAttribute("data-type", "cardB")
                 cardBId = (card.getAttribute("class"))
             }
             if (flippedCard === 2) {
