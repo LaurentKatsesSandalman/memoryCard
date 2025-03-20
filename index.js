@@ -1,3 +1,4 @@
+//MODULES
 
 //DECLARATIONS
 //(a)variables
@@ -68,6 +69,8 @@ function compare() {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
         for (let winCard of winPaire) {
+            const jsConfetti = new JSConfetti({ winCard })
+            jsConfetti.addConfetti()
             winCard.setAttribute("class", "img-card no-display");
             winCard.setAttribute("data-type", "");
         }

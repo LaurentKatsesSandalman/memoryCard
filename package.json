@@ -1,8 +1,4 @@
 {
-  "dependencies": {
-    "fireworks": "^2.2.7",
-    "fireworks-js": "^2.10.8"
-  },
   "type": "module",
   "name": "memorycard",
   "version": "1.0.0",
@@ -24,5 +20,8 @@
   "homepage": "https://github.com/LaurentKatsesSandalman/memoryCard#readme",
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
+  },
+  "dependencies": {
+    "js-confetti": "^0.12.0"
   }
 }
