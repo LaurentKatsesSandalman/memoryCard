@@ -25,6 +25,7 @@ const selectBestTime = document.querySelector(".best-time")
 const giveupBtn = document.querySelector(".giveup-main")
 const cancelBtn = document.querySelector(".giveup-no")
 const confirmBtn = document.querySelector(".giveup-yes")
+const vfx = document.querySelectorAll(".vfx")
 //FONCTIONS
 function remove(element) {
     element.setAttribute("class", "remove " + element.getAttribute("class"))
@@ -35,6 +36,14 @@ function activate(element) {
     setTimeout(function () {
         element.classList.remove("appear");
     }, 1501)
+}
+function displayVFX(element) {
+    element.classList.remove("remove");
+    element.setAttribute("class", "appearVFX " + element.getAttribute("class"))
+    setTimeout(function () {
+        element.classList.remove("appearVFX");
+        element.setAttribute("class", "remove " + element.getAttribute("class"))
+    }, 1000)
 }
 function shuffle(cardlist) {
     let buffer;
@@ -68,11 +77,22 @@ function compare() {
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
-        for (let winCard of winPaire) {
-            const jsConfetti = new JSConfetti({ winCard })
+        for (let i = 0; i < 2; i++) {
+            // let tempObject = winPaire[i].getBoundingClientRect();
+            // let tempTop = (tempObject.top + tempObject.bottom) / 2
+            // let tempLeft = tempObject.left
+            // let tempWidth = tempObject.right - tempObject.left
+            // vfx[i].style.top = `${Math.floor(tempTop)}px`
+            // vfx[i].style.left = `${Math.floor(tempLeft)}px`
+            // vfx[i].style.width = `${Math.floor(tempWidth)}px`
+            //displayVFX(vfx[i])
+            let tempCard = winPaire[i];
+            const jsConfetti = new JSConfetti({ tempCard })
             jsConfetti.addConfetti()
-            winCard.setAttribute("class", "img-card no-display");
-            winCard.setAttribute("data-type", "");
+            //setTimeout(function () {
+            winPaire[i].setAttribute("class", "img-card no-display");
+            winPaire[i].setAttribute("data-type", "");
+            //}, 500)
         }
         if (paires === 10) {
             playOn = false;
@@ -144,6 +164,7 @@ for (const card of allCards) {
                 selectCurrentTime.innerHTML = displayTime(currentTime);
             }, 1000)
             isFirst = false;
+
         }
         if (card.classList.contains("flipped") || !playOn) { }
         else if (flippedCard === 2) { }
