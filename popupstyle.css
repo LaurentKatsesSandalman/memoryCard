@@ -46,15 +46,18 @@ visibility:  ;
 
 .popup h2 {
 	font-family: "Metamorphous",  Impact;
+	font-size: 2rem;
 }
 .pop-best {
 	color: #5c5c5b;
 	font-size: large;
-	padding: 1rem;
+	padding: 0.1rem;
+	font-size: small;
 }
 .pop-current {
 	font-size: large;
-	padding: 1rem;
+	padding: 0.1rem;
+	font-size: small;
 }
 .area {
 
