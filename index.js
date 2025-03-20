@@ -78,6 +78,7 @@ function compare() {
             playOn = false;
             movesEnd = movesCurrent;
             clearInterval(timerInterval);
+            openPopup();
         }
     }
     else {
@@ -166,4 +167,17 @@ for (const card of allCards) {
             }
         }
     })
+}
+function openPopup() {
+    const popup = document.querySelector(".pop-container");
+    popup.style.display = "flex";
+    
+}
+const closeBtn = document.querySelector(".closepopup-button");
+closeBtn.addEventListener('click', closePopup);
+function closePopup() { 
+
+    location.reload();
+    const popup = document.querySelector(".pop-container");
+    popup.style.display = "none";
 }
