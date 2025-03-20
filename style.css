@@ -1,64 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
-:root{
+
+:root {
     --color-shadow: #474545;
-   --color-bg:#aae4ff;          /* les couleur ne sont pas bloquer je travail encore dessus  */
-    --color-best: grey ;
+    --color-bg: #aae4ff;
+    /* les couleur ne sont pas bloquer je travail encore dessus  */
+    --color-best: grey;
+    --color-footer: blueviolet;
+    --color-span: deeppink;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color:var(--color-bg) ;
+body {
+    background-color: var(--color-bg);
 }
-.regles{
+
+.regles {
     text-align: center;
     font-family: 'Martel', sans-serif;
     font-size: 0.75rem;
     padding: 1rem;
 }
-h1{
+
+h1 {
     font-family: 'Irish Grover', sans-serif;
     text-align: center;
     font-size: 4rem;
     text-shadow: 0 1px 10px var(--color-shadow);
 }
-.container{
+
+.container {
+    width: min(85%, 500px);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-self: center;
     padding: 1rem;
     background-color: var(--color-best);
+    aspect-ratio: 4/5;
 }
 
-.container img{
-    width: 70px;
-    height: 70px;
+.container img {
+    width: 95%;
+    aspect-ratio: 1/1;
     padding: 5%;
     justify-self: center;
 }
-.arrayScore{
+
+.arrayScore {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     padding: 1rem;
-    
+
 }
-.arrayScore p{
+
+.arrayScore p {
     justify-self: center;
-    
+
 }
+
 .best {
     color: var(--color-best);
 }
 
+footer {
+    position: absolute;
+    top: 95vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    padding: 1.5vh 0 0 0;
+    background-color: var(--color-footer);
+
+}
+
+.footer-link {
+    text-decoration: none;
+    color: var(--color-bg);
+}
+
+.freepik {
+    color: var(--color-span)
+}
+
+.play-btn {
+    display: block;
+    grid-column: span 4;
+    grid-row: span 5;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--color-footer);
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    border: 2px solid var(--color-shadow);
+}
+
+.giveup-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.giveup {
+    display: block;
+    background-color: var(--color-footer);
+    padding: 0.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    border: 2px solid var(--color-shadow);
+    margin: 5px;
+}
+
+.giveup-no {
+    background-color: var(--color-span);
+}
+
+.remove {
+    display: none;
+}
+
+
+/* animations */
 .no-display {
-    animation: validpair 0.55s linear 1;
+    animation: validpair 0.5s linear 1;
     animation-fill-mode: forwards;
+}
+
+.appear {
+    animation: appear 1.5s linear 1;
 }
 
 .img-card-active {
@@ -116,5 +194,171 @@ h1{
     100% {
 
         opacity: 0;
+    }
+}
+
+@keyframes appear {
+    00% {
+        transform: scale(0) rotate(0deg);
+    }
+
+    03% {
+        transform: scale(0.025) rotate(45deg);
+    }
+
+    05% {
+        transform: scale(0.05) rotate(90deg);
+    }
+
+    08% {
+        transform: scale(0.075) rotate(135deg);
+    }
+
+    10% {
+        transform: scale(0.1) rotate(180deg);
+    }
+
+    13% {
+        transform: scale(0.125) rotate(225deg);
+    }
+
+    15% {
+        transform: scale(0.15) rotate(270deg);
+    }
+
+    18% {
+        transform: scale(0.175) rotate(315deg);
+    }
+
+    20% {
+        transform: scale(0.2) rotate(360deg);
+    }
+
+    23% {
+        transform: scale(0.225) rotate(405deg);
+    }
+
+    25% {
+        transform: scale(0.25) rotate(450deg);
+    }
+
+    28% {
+        transform: scale(0.275) rotate(495deg);
+    }
+
+    30% {
+        transform: scale(0.3) rotate(540deg);
+    }
+
+    33% {
+        transform: scale(0.325) rotate(585deg);
+    }
+
+    35% {
+        transform: scale(0.35) rotate(630deg);
+    }
+
+    38% {
+        transform: scale(0.375) rotate(675deg);
+    }
+
+    40% {
+        transform: scale(0.4) rotate(720deg);
+    }
+
+    43% {
+        transform: scale(0.425) rotate(765deg);
+    }
+
+    45% {
+        transform: scale(0.45) rotate(810deg);
+    }
+
+    48% {
+        transform: scale(0.475) rotate(855deg);
+    }
+
+    50% {
+        transform: scale(0.5) rotate(900deg);
+    }
+
+    53% {
+        transform: scale(0.525) rotate(945deg);
+    }
+
+    55% {
+        transform: scale(0.55) rotate(990deg);
+    }
+
+    58% {
+        transform: scale(0.575) rotate(1035deg);
+    }
+
+    60% {
+        transform: scale(0.6) rotate(1080deg);
+    }
+
+    63% {
+        transform: scale(0.625) rotate(1125deg);
+    }
+
+    65% {
+        transform: scale(0.65) rotate(1170deg);
+    }
+
+    68% {
+        transform: scale(0.675) rotate(1215deg);
+    }
+
+    70% {
+        transform: scale(0.7) rotate(1260deg);
+    }
+
+    73% {
+        transform: scale(0.725) rotate(1305deg);
+    }
+
+    75% {
+        transform: scale(0.75) rotate(1350deg);
+    }
+
+    78% {
+        transform: scale(0.775) rotate(1395deg);
+    }
+
+    80% {
+        transform: scale(0.8) rotate(1440deg);
+    }
+
+    83% {
+        transform: scale(0.825) rotate(1485deg);
+    }
+
+    85% {
+        transform: scale(0.85) rotate(1530deg);
+    }
+
+    88% {
+        transform: scale(0.875) rotate(1575deg);
+    }
+
+    90% {
+        transform: scale(0.90) rotate(1620deg);
+    }
+
+    93% {
+        transform: scale(0.925) rotate(1665deg);
+    }
+
+    95% {
+        transform: scale(0.95) rotate(1710deg);
+    }
+
+    98% {
+        transform: scale(0.975) rotate(1755deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(1800deg);
     }
 }

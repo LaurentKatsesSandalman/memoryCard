@@ -12,64 +12,62 @@
 </head>
 
 <body>
-         <header>
-            <h1>Memory</h1>
-            <p class="regles">Le but est de retrouver toutes les paires de cartes le plus rapidement possible avec
-                 le moins de mouvements, dans le but de faire les meilleures performances</p>
-            <div class="arrayScore">
-                <p class="best">Best time</p>     
-                <p class="best">Best move</p>
-                <p class="current">time<time></time></p>
-                <p class="current">move : 0</p> <!--juste structurel--> 
+    <header>
+        <h1>Memory</h1>
+        <p class="regles">Le but est de retrouver toutes les paires de cartes le plus rapidement possible avec
+            le moins de mouvements, dans le but de faire les meilleures performances</p>
+        <div class="arrayScore">
+            <p class="best">Record temps : <span class="best-time">24:00:00</span></p>
+            <p class="best">Record coups : <span class="best-moves">999</span></p>
+            <p class="current">Temps : <span class="current-time">00:00:00</span></p>
+            <p class="current">Coups : <span class="current-moves">0</span></p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <button class="play-btn">Jouer</button>
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+        </div>
+        <div class="pop-container">
+            <div class="popup" id="popup">
+                <h2>Well Done !</h2>
+                <div class="pop-score">
+                    <p class="best">Best time</p>
+                    <p class="current">time<time></time></p>
+                    <p class="best">Best move</p>
+                    <p class="current">move : 0</p>
+                </div>
+                <button type="button" onclick="closePopup()">Continue</button>
             </div>
-        </header>
-        <main>
-            <div class="container">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card0">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card1">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card2">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card3">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card4">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card5">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card6">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card7">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card8">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card9">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card0">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card1">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card2">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card3">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card4">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card5">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card6">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card7">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card8">
-                <img src="images/used/cardverso.jpg" alt="" class="img-card card9">
+            <div class="giveup-container">
+                <button class="remove giveup giveup-main">Abandonner</button>
+                <button class="remove giveup giveup-no">Annuler</button>
+                <button class="remove giveup giveup-yes">Confirmer</button>
             </div>
-            <div class="pop-container">
-                          
-                <div class="popup" id="popup">
-              
-                    <div class = "area">
-                        <h2>Bravo !</h2>
-                    </div>
-                    <div class="pop-score">
-                        <p class="pop-best">Best time</p>
-                        <p class="pop-current">time<time></time></p>     
-                        <p class="pop-best">Best move</p>
-                        <p class="pop-current">move : 0</p> 
-                    </div>
-                  <button type="button" onclick="closePopup()">Continue</button>
-              
-                </div>  
-              
-              </div>
-              
-              
-        </main>
-    
-        <a href="https://fr.freepik.com/">Images de freepik</a>
-        <script src="index.js"></script>
+    </main>
+    <footer>
+        <a class="footer-link" href="https://fr.freepik.com/">Images de <span class="freepik">freepik</span></a>
+    </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
