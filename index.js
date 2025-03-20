@@ -1,5 +1,5 @@
 
-//déclaration:
+//DECLARATIONS
 //(a)variables
 let flippedCard = 0;
 let paires = 0;
@@ -21,12 +21,13 @@ const selectCurrentMoves = document.querySelector(".current-moves")
 const selectCurrentTime = document.querySelector(".current-time")
 const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
-
-//fonctions
+const giveupBtn = document.querySelector(".giveup-main")
+const cancelBtn = document.querySelector(".giveup-no")
+const confirmBtn = document.querySelector(".giveup-yes")
+//FONCTIONS
 function remove(element) {
     element.setAttribute("class", "remove " + element.getAttribute("class"))
 }
-
 function activate(element) {
     element.classList.remove("remove");
     element.setAttribute("class", "appear " + element.getAttribute("class"))
@@ -34,26 +35,21 @@ function activate(element) {
         element.classList.remove("appear");
     }, 1501)
 }
-
 function shuffle(cardlist) {
-    let buffer = "";
-    let index = "0";
+    let buffer;
+    let index;
     for (let i = 0; i < cardlist.length; i++) {
         buffer = cardlist[i];
         index = Math.floor(Math.random() * cardlist.length);
         cardlist[i] = cardlist[index];
         cardlist[index] = buffer;
-
     }
 }
-
 function flip(card) {
     card.setAttribute("class", "img-card-active" + " " + card.getAttribute("class"));
-
     setTimeout(function () {
         const verso = "verso.jpg";
         if (card.src.includes(verso)) {
-
             const cardClass = (card.getAttribute("class"));
             card.src = card.src.slice(0, -"verso.jpg".length) + cardClass.slice(-1) + ".jpg";
         }
@@ -61,12 +57,10 @@ function flip(card) {
             card.src = card.src.slice(0, -5) + "verso.jpg";
         }
     }, 250)
-
     setTimeout(function () {
         card.classList.remove("img-card-active");
     }, 501)
 }
-
 function compare() {
     movesCurrent++;
     selectCurrentMoves.innerHTML = movesCurrent;
@@ -97,7 +91,6 @@ function compare() {
     cardAId = "";
     cardBId = "";
 }
-
 function displayTime(timeInMS) {
     let hh = Math.floor(timeInMS / 3600000);
     let mm = "";
@@ -116,8 +109,7 @@ function displayTime(timeInMS) {
     }
     return `${hh}:${mm}:${ss}`;
 }
-
-//run
+//RUN
 playBtn.addEventListener('click', function () {
     shuffle(deck);
     remove(playBtn);
@@ -125,8 +117,21 @@ playBtn.addEventListener('click', function () {
         activate(allCards[i]);
         allCards[i].classList.add(deck[i]);
     }
+    giveupBtn.classList.remove("remove");
 })
-
+giveupBtn.addEventListener('click', function () {
+    remove(giveupBtn);
+    cancelBtn.classList.remove("remove");
+    confirmBtn.classList.remove("remove");
+})
+cancelBtn.addEventListener('click', function () {
+    remove(cancelBtn);
+    remove(confirmBtn);
+    giveupBtn.classList.remove("remove");
+})
+confirmBtn.addEventListener('click', function () {
+    location.reload();
+})
 for (const card of allCards) {
     card.addEventListener('click', function () {
         if (isFirst) {
@@ -142,8 +147,6 @@ for (const card of allCards) {
         else {
             flip(card);
             flippedCard++;
-
-
             if (cardAId === "") {
                 card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
                 card.setAttribute("data-type", "cardA")
