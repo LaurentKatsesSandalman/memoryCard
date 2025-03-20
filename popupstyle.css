@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+:root {
+	--color-bgpop: #60a3fa;
+	--color-button: #fa7474;
+	--color-best: #5c5c5b;
+	--color-area: #3efa05;
+	--color-set: #292929;
+}
 
 * {
     margin: 0;
@@ -9,12 +16,12 @@
     box-sizing: border-box;
 }
 .pop-container {
-display: block;
+display: ;
 }
 
 .pop-container button {
 	padding: 0.3rem 1.5rem;
-	background: #fa7474;
+	background: var(--color-button);
 	border: 0;
 	outline: none;
 	cursor: pointer;
@@ -28,16 +35,17 @@ display: block;
 
 .pop-score {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 2fr;
 	justify-content: center;
 	font-family: 'Martel', sans-serif;
-	padding: 2rem;
+	margin: -4rem;
+	
 }
 
 .popup {
 	width: 90%;
 	height: 66%;
-	background: #60a3fa;
+	background: var(--color-bgpop);
 	border-radius: 1rem;
 	position: absolute;
 	top: 50%;
@@ -45,7 +53,7 @@ display: block;
 	transform: translate(-50%, -50%);
 	text-align: center;
 	padding: 0 2rem 4rem;
-	color: #333;
+	color: var(--color-set);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -61,22 +69,22 @@ display: block;
 }
 
 .pop-best {
-	color: #5c5c5b;
-	font-size: 1rem;
+	color: var(--color-best);
+	font-size: 0.8rem;
 	padding: 0.1rem;
 }
 
 .pop-current {
-
-	font-size: 1rem;
+	font-size: 0.8rem;
 	padding: 0.1rem;
+	
 }
 
 .area {
 
 	text-align: center;
 	font-size: 2em;
-	color: #3efa05;
+	color: var(--color-area);
 	text-transform: uppercase;
 	animation: blur .75s ease-out infinite;
 	text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;

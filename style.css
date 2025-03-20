@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
 
 :root {
-    --color-shadow: #474545;
+    --color-shadow: #454747;
     --color-bg: #aae4ff;
+    --color-bggame: #76cafa;
     /* les couleur ne sont pas bloquer je travail encore dessus  */
     --color-best: grey;
     --color-footer: blueviolet;
@@ -41,7 +42,7 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: auto;
     padding: 1rem;
-    background-color: var(--color-best);
+    background-color: var(--color-bggame);
     aspect-ratio: 4/5;
     border-radius: 5%;
 }
@@ -52,6 +53,7 @@ h1 {
     padding: 5%;
     justify-self: center;
     border-radius: 15%;
+    
 }
 
 .arrayScore {
