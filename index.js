@@ -1,4 +1,4 @@
-//MODULES
+//MODULES : le module a finalement été importé via le html
 
 //DECLARATIONS
 //(a)variables
@@ -78,6 +78,8 @@ function compare() {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
         for (let i = 0; i < 2; i++) {
+
+            // CODE DE L'ANIMATION FAITE A LA MANO
             // let tempObject = winPaire[i].getBoundingClientRect();
             // let tempTop = (tempObject.top + tempObject.bottom) / 2
             // let tempLeft = tempObject.left
@@ -89,6 +91,7 @@ function compare() {
             let tempCard = winPaire[i];
             const jsConfetti = new JSConfetti({ tempCard })
             jsConfetti.addConfetti()
+            //LE TIME OUT N'EST NECESSAIRE QUE POUR L'ANIM FAITE A LA MANO
             //setTimeout(function () {
             winPaire[i].setAttribute("class", "img-card no-display");
             winPaire[i].setAttribute("data-type", "");
