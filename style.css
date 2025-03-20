@@ -39,7 +39,7 @@ h1 {
     width: min(85%, 500px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-self: center;
+    margin: auto;
     padding: 1rem;
     background-color: var(--color-best);
     aspect-ratio: 4/5;

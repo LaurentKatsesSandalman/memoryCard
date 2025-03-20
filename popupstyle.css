@@ -2,11 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .pop-container {
-visibility:  ;
+display: ;
 }
 .pop-container button {
-	padding: 5px 50px;
+	padding: 0.3rem 1.5rem;
 	background: #fa7474;
 	border: 0;
 	outline: none;
@@ -16,6 +21,7 @@ visibility:  ;
 	transition: transform 0.2s;
 	width: 50%;
 	font-family: 'Metamorphous', sans-serif;
+
 }
 .pop-score {
 	display: grid;
@@ -27,7 +33,7 @@ visibility:  ;
 
 .popup {
 	width: 90%;
-	height: 70%;
+	height: 66%;
 	background: #60a3fa;
 	border-radius: 1rem;
 	position: absolute;
@@ -46,7 +52,8 @@ visibility:  ;
 
 .popup h2 {
 	font-family: "Metamorphous",  Impact;
-	font-size: 2rem;
+	font-size: 3.5rem;
+	padding-top: 2rem;
 }
 .pop-best {
 	color: #5c5c5b;
