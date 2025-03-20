@@ -8,6 +8,7 @@
     <meta name="author" content="Seb & Lau"> <!--Seb, écris ton nom comme tu veux ici -->
     <title>Title | Subtitle</title> <!--à mettre à jour aussi -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popupstyle.css">
 </head>
 
 <body>
@@ -46,11 +47,22 @@
             <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
             <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
         </div>
-        <div class="giveup-container">
-            <button class="remove giveup giveup-main">Abandonner</button>
-            <button class="remove giveup giveup-no">Annuler</button>
-            <button class="remove giveup giveup-yes">Confirmer</button>
-        </div>
+        <div class="pop-container">
+            <div class="popup" id="popup">
+                <h2>Well Done !</h2>
+                <div class="pop-score">
+                    <p class="best">Best time</p>
+                    <p class="current">time<time></time></p>
+                    <p class="best">Best move</p>
+                    <p class="current">move : 0</p>
+                </div>
+                <button type="button" onclick="closePopup()">Continue</button>
+            </div>
+            <div class="giveup-container">
+                <button class="remove giveup giveup-main">Abandonner</button>
+                <button class="remove giveup giveup-no">Annuler</button>
+                <button class="remove giveup giveup-yes">Confirmer</button>
+            </div>
     </main>
     <footer>
         <a class="footer-link" href="https://fr.freepik.com/">Images de <span class="freepik">freepik</span></a>
