@@ -1,0 +1,49 @@
+/* .pop-container {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+
+.pop-container button {
+	padding: 5px 10px;
+	background: #fa7474;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 500;
+	border-radius: 10px;
+	transition: transform 0.2s;
+	width: 10%;
+}
+.pop-score {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.popup {
+	width: 70%;
+	height: 70%;
+	background: #fff;
+	border-radius: 1rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 0 2rem 4rem;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.popup h2 {
+	font-size: 5rem;
+}
