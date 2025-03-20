@@ -3,19 +3,18 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .pop-container {
-visibility: hidden;
+visibility:  ;
 }
 .pop-container button {
-	padding: 5px 10px;
+	padding: 5px 50px;
 	background: #fa7474;
 	border: 0;
 	outline: none;
 	cursor: pointer;
 	font-size: 12px;
-	font-weight: 500;
 	border-radius: 10px;
 	transition: transform 0.2s;
-	width: 10%;
+	width: 50%;
 	font-family: 'Metamorphous', sans-serif;
 }
 .pop-score {
@@ -27,7 +26,7 @@ visibility: hidden;
 }
 
 .popup {
-	width: 70%;
+	width: 90%;
 	height: 70%;
 	background: #60a3fa;
 	border-radius: 1rem;
@@ -51,14 +50,14 @@ visibility: hidden;
 .pop-best {
 	color: #5c5c5b;
 	font-size: large;
-	padding: 2rem;
+	padding: 1rem;
 }
 .pop-current {
 	font-size: large;
-	padding: 2rem;
+	padding: 1rem;
 }
 .area {
-	padding: 2rem;
+
 	text-align: center;
 	font-size: 3.5em;
 	color: #3efa05;

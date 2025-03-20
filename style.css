@@ -51,6 +51,7 @@ h1 {
     aspect-ratio: 1/1;
     padding: 5%;
     justify-self: center;
+    border-radius: 15%;
 }
 
 .arrayScore {
