@@ -20,6 +20,7 @@
 	grid-template-columns: 1fr 1fr;
 	justify-content: center;
 	font-family: 'Martel', sans-serif;
+	padding: 2rem;
 }
 
 .popup {
@@ -42,7 +43,6 @@
 }
 
 .popup h2 {
-	
 	font-family: "Metamorphous",  Impact;
 }
 .pop-best {
