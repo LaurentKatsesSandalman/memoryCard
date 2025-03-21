@@ -26,6 +26,10 @@ const selectMovesCurrent = document.querySelector(".current-moves")
 const selectTimeCurrent = document.querySelector(".current-time")
 const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
+const selectMovesCurrentPop = document.querySelector(".current-moves-pop")
+const selectTimeCurrentPop = document.querySelector(".current-time-pop")
+const selectBestMovesPop = document.querySelector(".best-moves-pop")
+const selectBestTimePop = document.querySelector(".best-time-pop")
 const giveupBtn = document.querySelector(".giveup-main")
 const cancelBtn = document.querySelector(".giveup-no")
 const confirmBtn = document.querySelector(".giveup-yes")
@@ -84,6 +88,8 @@ function compare() {
             movesEnd = movesCurrent;
             clearInterval(timerInterval);
             endTime = timeCurrent;
+            updateBest();
+            displayResult();
             openPopup();
         }
     }
@@ -113,6 +119,13 @@ function updateBest(){
         localStorage.setItem("movesBest",movesBest)
     }
 }
+function displayResult(){
+    selectTimeCurrentPop.innerHTML=displayTime(endTime)
+    selectMovesCurrentPop.innerHTML=movesEnd
+    selectBestTimePop.innerHTML = displayTime(timeBest);
+    selectBestMovesPop.innerHTML = movesBest;
+
+}
 
 function displayTime(timeInMS) {
     // biome-ignore lint/style/useConst: <explanation>
@@ -136,6 +149,7 @@ function displayTime(timeInMS) {
 //RUN
 selectBestTime.innerHTML = displayTime(timeBest);
 selectBestMoves.innerHTML = movesBest;
+
 playBtn.addEventListener('click', () => {
     shuffle(deck);
     remove(playBtn);
