@@ -1,4 +1,4 @@
-//MODULES
+//MODULES: directly declared in html (failed tu use an import)
 
 //DECLARATIONS
 //(a)variables
@@ -32,8 +32,7 @@ function remove(element) {
 function activate(element) {
     element.classList.remove("remove");
     element.setAttribute("class", `appear ${element.getAttribute("class")}`)
-    // biome-ignore lint/complexity/useArrowFunction: <explanation>
-    setTimeout(function () {
+        setTimeout(() => {
         element.classList.remove("appear");
     }, 1501)
 }
@@ -49,8 +48,7 @@ function shuffle(cardlist) {
 }
 function flip(card) {
     card.setAttribute("class", `img-card-active ${card.getAttribute("class")}`);
-    // biome-ignore lint/complexity/useArrowFunction: <explanation>
-    setTimeout(function () {
+        setTimeout(() => {
         const verso = "verso.jpg";
         if (card.src.includes(verso)) {
             const cardClass = (card.getAttribute("class"));
@@ -60,8 +58,7 @@ function flip(card) {
             card.src = `${card.src.slice(0, -5)}verso.jpg`;
         }
     }, 250)
-    // biome-ignore lint/complexity/useArrowFunction: <explanation>
-    setTimeout(function () {
+        setTimeout(() => {
         card.classList.remove("img-card-active");
     }, 501)
 }
@@ -119,8 +116,7 @@ function displayTime(timeInMS) {
     return `${hh}:${mm}:${ss}`;
 }
 //RUN
-// biome-ignore lint/complexity/useArrowFunction: <explanation>
-playBtn.addEventListener('click', function () {
+playBtn.addEventListener('click', () => {
     shuffle(deck);
     remove(playBtn);
     for (let i = 0; i < allCards.length; i++) {
@@ -129,25 +125,21 @@ playBtn.addEventListener('click', function () {
     }
     giveupBtn.classList.remove("remove");
 })
-// biome-ignore lint/complexity/useArrowFunction: <explanation>
-giveupBtn.addEventListener('click', function () {
+giveupBtn.addEventListener('click', () => {
     remove(giveupBtn);
     cancelBtn.classList.remove("remove");
     confirmBtn.classList.remove("remove");
 })
-// biome-ignore lint/complexity/useArrowFunction: <explanation>
-cancelBtn.addEventListener('click', function () {
+cancelBtn.addEventListener('click', () => {
     remove(cancelBtn);
     remove(confirmBtn);
     giveupBtn.classList.remove("remove");
 })
-// biome-ignore lint/complexity/useArrowFunction: <explanation>
-confirmBtn.addEventListener('click', function () {
+confirmBtn.addEventListener('click', () => {
     location.reload();
 })
-for (const card of allCards) {
-    // biome-ignore lint/complexity/useArrowFunction: <explanation>
-    card.addEventListener('click', function () {
+for (const card of allCards) {  
+    card.addEventListener('click', () => {
         if (isFirst) {
             startTime = Date.now();
             timerInterval = setInterval(() => {
@@ -173,20 +165,17 @@ for (const card of allCards) {
             }
             if (flippedCard === 2) {
                 setTimeout(compare, 1500);
-
             }
         }
     })
 }
 function openPopup() {
     const popup = document.querySelector(".pop-container");
-    popup.style.display = "flex";
-    
+    popup.style.display = "flex";  
 }
 const closeBtn = document.querySelector(".closepopup-button");
 closeBtn.addEventListener('click', closePopup);
-function closePopup() { 
-
+function closePopup() {
     location.reload();
     const popup = document.querySelector(".pop-container");
     popup.style.display = "none";
