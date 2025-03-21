@@ -7,50 +7,72 @@
     <meta name="description" content="bla"> <!--content à mettre à jour -->
     <meta name="author" content="Seb & Lau"> <!--Seb, écris ton nom comme tu veux ici -->
     <title>Title | Subtitle</title> <!--à mettre à jour aussi -->
-    //<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popupstyle.css">
+    <link rel="stylesheet" href="mediastyle.css">
 </head>
 
 <body>
-    <nav><a href="imageanimation.html">hidden page</a></nav>
-    
-        <header>
-            <h1>Memory</h1>
-            <p class="regles">Le but est de retrouver toutes les paires de cartes le plus rapidement possible avec
-                 le moins de mouvements, dans le but de faire les meilleures performances</p>
-            <div class="arrayScore">
-                <p class="best">Best time</p>     
-                <p class="best">Best move</p>
-                <p class ="current">time<time></time></p>
-                <p class ="current">move : 0</p> <!--juste structurel--> 
+    <img src="images/used/glitter-stars.png" class="glittersA vfx remove"> <!--please add remove-->
+    <img src="images/used/glitter-stars.png" class="glittersB vfx remove"> <!--please add remove-->
+    <header>
+        <h1>Memory</h1>
+        <p class="regles">Le but est de retrouver toutes les paires de cartes le plus rapidement possible avec
+            le moins de mouvements, dans le but de faire les meilleures performances</p>
+        <div class="arrayScore">
+            <p class="best">Record temps : <span class="best-time"></span></p>
+            <p class="best">Record coups : <span class="best-moves"></span></p>
+            <p class="current">Temps : <span class="current-time">00:00:00</span></p>
+            <p class="current">Coups : <span class="current-moves">0</span></p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <button class="play-btn">Jouer</button>
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+            <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
+        </div>
+        <div class="pop-container">
+            <div class="popup" id="popup">
+                <h2 class="area">Bravo !</h2>
+                <div class="pop-score">
+                    <p class="pop-current">Temps : <span class="current-time-pop">00:00:00</span></p>
+                    <p class="pop-best">Record temps : <span class="best-time-pop"></span></p>
+                    <p class="pop-current">Coups : <span class="current-moves-pop">0</span></p>
+                    <p class="pop-best">Record coups : <span class="best-moves-pop"></span></p>
+                </div>
+                <button type="button" class="closepopup-button">Continuer</button>
             </div>
-        </header>
-        <main>
-            <div class="container">
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>                       
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-                <img src="images/used/cardverso.jpg"/>
-            </div>    
-        </main> 
-    
-            
-    <script src="script.js"></script>
+        </div>
+        <div class="giveup-container">
+            <button class="remove giveup giveup-main">Abandonner</button>
+            <button class="remove giveup giveup-no">Annuler</button>
+            <button class="remove giveup giveup-yes">Confirmer</button>
+        </div>
+    </main>
+    <footer>
+        <a class="footer-link" href="https://fr.freepik.com/">Images de <span class="freepik">freepik</span></a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
