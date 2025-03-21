@@ -6,20 +6,24 @@ let flippedCard = 0;
 let paires = 0;
 let cardAId = "";
 let cardBId = "";
+let movesBest = Number.parseInt(localStorage.getItem("movesBest")) || 999;
 let movesCurrent = 0;
 let movesEnd = 0;
 let playOn = true;
 let isFirst = true;
+let isBestTime = false;
+let isBestMove = false;
 let startTime;
 let endTime;
-let currentTime = 0;
+let timeBest = Number.parseInt(localStorage.getItem("timeBest")) || 86400000;
+let timeCurrent = 0;
 let timerInterval = null;
 const deck = ["card0", "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card0", "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9"]
 //(b)selectors
 const playBtn = document.querySelector(".play-btn")
 const allCards = document.querySelectorAll(".img-card");
-const selectCurrentMoves = document.querySelector(".current-moves")
-const selectCurrentTime = document.querySelector(".current-time")
+const selectMovesCurrent = document.querySelector(".current-moves")
+const selectTimeCurrent = document.querySelector(".current-time")
 const selectBestMoves = document.querySelector(".best-moves")
 const selectBestTime = document.querySelector(".best-time")
 const giveupBtn = document.querySelector(".giveup-main")
@@ -64,7 +68,7 @@ function flip(card) {
 }
 function compare() {
     movesCurrent++;
-    selectCurrentMoves.innerHTML = movesCurrent;
+    selectMovesCurrent.innerHTML = movesCurrent;
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
@@ -79,6 +83,7 @@ function compare() {
             playOn = false;
             movesEnd = movesCurrent;
             clearInterval(timerInterval);
+            endTime = timeCurrent;
             openPopup();
         }
     }
@@ -96,6 +101,19 @@ function compare() {
     cardAId = "";
     cardBId = "";
 }
+function updateBest(){
+    if(endTime<timeBest){
+        timeBest=endTime;
+        isBestTime=true;
+        localStorage.setItem("timeBest",timeBest)
+    }
+    if(movesEnd<movesBest){
+        movesBest=movesEnd;
+        isBestMove=true;
+        localStorage.setItem("movesBest",movesBest)
+    }
+}
+
 function displayTime(timeInMS) {
     // biome-ignore lint/style/useConst: <explanation>
     let hh = Math.floor(timeInMS / 3600000);
@@ -116,6 +134,8 @@ function displayTime(timeInMS) {
     return `${hh}:${mm}:${ss}`;
 }
 //RUN
+selectBestTime.innerHTML = displayTime(timeBest);
+selectBestMoves.innerHTML = movesBest;
 playBtn.addEventListener('click', () => {
     shuffle(deck);
     remove(playBtn);
@@ -143,8 +163,8 @@ for (const card of allCards) {
         if (isFirst) {
             startTime = Date.now();
             timerInterval = setInterval(() => {
-                currentTime = Date.now() - startTime;
-                selectCurrentTime.innerHTML = displayTime(currentTime);
+                timeCurrent = Date.now() - startTime;
+                selectTimeCurrent.innerHTML = displayTime(timeCurrent);
             }, 1000)
             isFirst = false;
         }
