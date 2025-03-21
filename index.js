@@ -85,9 +85,8 @@ function compare() {
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
-
-        // biome-ignore lint/style/useConst: <explanation>
-        for (let winCard of winPaire) {
+        for (let i = 0; i < 2; i++) {
+            let winCard=winPaire[i]
             const jsConfetti = new JSConfetti({ winCard })
 
         //for (let i = 0; i < 2; i++) {
@@ -104,11 +103,11 @@ function compare() {
             //let tempCard = winPaire[i];
             //const jsConfetti = new JSConfetti({ tempCard })
 
-            jsConfetti.addConfetti()
+           jsConfetti.addConfetti() 
             //LE TIME OUT N'EST NECESSAIRE QUE POUR L'ANIM FAITE A LA MANO
             //setTimeout(function () {
-            winPaire[i].setAttribute("class", "img-card no-display");
-            winPaire[i].setAttribute("data-type", "");
+            winCard.setAttribute("class", "img-card no-display");
+            winCard.setAttribute("data-type", "");
             //}, 500)
         }
         if (paires === 10) {
