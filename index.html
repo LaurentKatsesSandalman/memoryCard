@@ -8,6 +8,8 @@
     <meta name="author" content="Seb & Lau"> <!--Seb, écris ton nom comme tu veux ici -->
     <title>Title | Subtitle</title> <!--à mettre à jour aussi -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popupstyle.css">
+    <link rel="stylesheet" href="mediastyle.css">
 </head>
 
 <body>
@@ -46,6 +48,18 @@
             <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
             <img src="images/used/cardverso.jpg" alt="" class="img-card remove ">
         </div>
+        <div class="pop-container">
+            <div class="popup" id="popup">
+                <h2 class="area">Bravo !</h2>
+                <div class="pop-score">
+                    <p class="pop-current">Temps : <span class="current-time">00:00:00</span></p>
+                    <p class="pop-best">Record temps : <span class="best-time">24:00:00</span></p>
+                    <p class="pop-current">Coups : <span class="current-moves">0</span></p>
+                    <p class="pop-best">Record coups : <span class="best-moves">999</span></p>
+                </div>
+                <button type="button" class="closepopup-button">Continuer</button>
+            </div>
+        </div>
         <div class="giveup-container">
             <button class="remove giveup giveup-main">Abandonner</button>
             <button class="remove giveup giveup-no">Annuler</button>
@@ -55,7 +69,9 @@
     <footer>
         <a class="footer-link" href="https://fr.freepik.com/">Images de <span class="freepik">freepik</span></a>
     </footer>
-    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="popup.js"></script>
 </body>
 
 </html>

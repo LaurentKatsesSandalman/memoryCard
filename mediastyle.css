@@ -1,0 +1,13 @@
+@media screen and (orientation: landscape) {
+    .container {
+        width: min(45%, 700px);
+        height: 50%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        aspect-ratio: 5/4;
+    }
+
+    .play-btn {
+        grid-column: span 5;
+        grid-row: span 4;
+    }
+}

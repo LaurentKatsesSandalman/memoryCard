@@ -1,3 +1,4 @@
+//MODULES
 
 //DECLARATIONS
 //(a)variables
@@ -26,11 +27,12 @@ const cancelBtn = document.querySelector(".giveup-no")
 const confirmBtn = document.querySelector(".giveup-yes")
 //FONCTIONS
 function remove(element) {
-    element.setAttribute("class", "remove " + element.getAttribute("class"))
+    element.setAttribute("class", `remove ${element.getAttribute("class")}`)
 }
 function activate(element) {
     element.classList.remove("remove");
-    element.setAttribute("class", "appear " + element.getAttribute("class"))
+    element.setAttribute("class", `appear ${element.getAttribute("class")}`)
+    // biome-ignore lint/complexity/useArrowFunction: <explanation>
     setTimeout(function () {
         element.classList.remove("appear");
     }, 1501)
@@ -46,17 +48,19 @@ function shuffle(cardlist) {
     }
 }
 function flip(card) {
-    card.setAttribute("class", "img-card-active" + " " + card.getAttribute("class"));
+    card.setAttribute("class", `img-card-active ${card.getAttribute("class")}`);
+    // biome-ignore lint/complexity/useArrowFunction: <explanation>
     setTimeout(function () {
         const verso = "verso.jpg";
         if (card.src.includes(verso)) {
             const cardClass = (card.getAttribute("class"));
-            card.src = card.src.slice(0, -"verso.jpg".length) + cardClass.slice(-1) + ".jpg";
+            card.src = `${card.src.slice(0, -"verso.jpg".length) + cardClass.slice(-1)}.jpg`;
         }
         else {
-            card.src = card.src.slice(0, -5) + "verso.jpg";
+            card.src = `${card.src.slice(0, -5)}verso.jpg`;
         }
     }, 250)
+    // biome-ignore lint/complexity/useArrowFunction: <explanation>
     setTimeout(function () {
         card.classList.remove("img-card-active");
     }, 501)
@@ -67,7 +71,10 @@ function compare() {
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
+        // biome-ignore lint/style/useConst: <explanation>
         for (let winCard of winPaire) {
+            const jsConfetti = new JSConfetti({ winCard })
+            jsConfetti.addConfetti()
             winCard.setAttribute("class", "img-card no-display");
             winCard.setAttribute("data-type", "");
         }
@@ -75,6 +82,7 @@ function compare() {
             playOn = false;
             movesEnd = movesCurrent;
             clearInterval(timerInterval);
+            openPopup();
         }
     }
     else {
@@ -92,6 +100,7 @@ function compare() {
     cardBId = "";
 }
 function displayTime(timeInMS) {
+    // biome-ignore lint/style/useConst: <explanation>
     let hh = Math.floor(timeInMS / 3600000);
     let mm = "";
     let ss = "";
@@ -110,6 +119,7 @@ function displayTime(timeInMS) {
     return `${hh}:${mm}:${ss}`;
 }
 //RUN
+// biome-ignore lint/complexity/useArrowFunction: <explanation>
 playBtn.addEventListener('click', function () {
     shuffle(deck);
     remove(playBtn);
@@ -119,20 +129,24 @@ playBtn.addEventListener('click', function () {
     }
     giveupBtn.classList.remove("remove");
 })
+// biome-ignore lint/complexity/useArrowFunction: <explanation>
 giveupBtn.addEventListener('click', function () {
     remove(giveupBtn);
     cancelBtn.classList.remove("remove");
     confirmBtn.classList.remove("remove");
 })
+// biome-ignore lint/complexity/useArrowFunction: <explanation>
 cancelBtn.addEventListener('click', function () {
     remove(cancelBtn);
     remove(confirmBtn);
     giveupBtn.classList.remove("remove");
 })
+// biome-ignore lint/complexity/useArrowFunction: <explanation>
 confirmBtn.addEventListener('click', function () {
     location.reload();
 })
 for (const card of allCards) {
+    // biome-ignore lint/complexity/useArrowFunction: <explanation>
     card.addEventListener('click', function () {
         if (isFirst) {
             startTime = Date.now();
@@ -148,12 +162,12 @@ for (const card of allCards) {
             flip(card);
             flippedCard++;
             if (cardAId === "") {
-                card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
+                card.setAttribute("class", `flipped ${card.getAttribute("class")}`);
                 card.setAttribute("data-type", "cardA")
                 cardAId = (card.getAttribute("class"))
             }
             else if (cardBId === "") {
-                card.setAttribute("class", "flipped" + " " + card.getAttribute("class"));
+                card.setAttribute("class", `flipped ${card.getAttribute("class")}`);
                 card.setAttribute("data-type", "cardB")
                 cardBId = (card.getAttribute("class"))
             }
@@ -163,4 +177,17 @@ for (const card of allCards) {
             }
         }
     })
+}
+function openPopup() {
+    const popup = document.querySelector(".pop-container");
+    popup.style.display = "flex";
+    
+}
+const closeBtn = document.querySelector(".closepopup-button");
+closeBtn.addEventListener('click', closePopup);
+function closePopup() { 
+
+    location.reload();
+    const popup = document.querySelector(".pop-container");
+    popup.style.display = "none";
 }
