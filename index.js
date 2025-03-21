@@ -34,6 +34,8 @@ const giveupBtn = document.querySelector(".giveup-main")
 const cancelBtn = document.querySelector(".giveup-no")
 const confirmBtn = document.querySelector(".giveup-yes")
 const vfx = document.querySelectorAll(".vfx")
+const vfxA=document.querySelector(".glittersA")
+const vfxB=document.querySelector(".glittersB")
 //FONCTIONS
 function remove(element) {
     element.setAttribute("class", `remove ${element.getAttribute("class")}`)
@@ -46,8 +48,10 @@ function activate(element) {
     }, 1501)
 }
 function displayVFX(element) {
+    console.log("display VFX reached")
     element.classList.remove("remove");
     element.setAttribute("class", `appearVFX ${element.getAttribute("class")}`)
+    console.log(element)
     setTimeout(() => {
         element.classList.remove("appearVFX");
         element.setAttribute("class", `remove ${element.getAttribute("class")}`)
@@ -86,29 +90,11 @@ function compare() {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
         for (let i = 0; i < 2; i++) {
-            let winCard=winPaire[i]
+            const winCard=winPaire[i]
             const jsConfetti = new JSConfetti({ winCard })
-
-        //for (let i = 0; i < 2; i++) {
-
-            // CODE DE L'ANIMATION FAITE A LA MANO
-            // let tempObject = winPaire[i].getBoundingClientRect();
-            // let tempTop = (tempObject.top + tempObject.bottom) / 2
-            // let tempLeft = tempObject.left
-            // let tempWidth = tempObject.right - tempObject.left
-            // vfx[i].style.top = `${Math.floor(tempTop)}px`
-            // vfx[i].style.left = `${Math.floor(tempLeft)}px`
-            // vfx[i].style.width = `${Math.floor(tempWidth)}px`
-            //displayVFX(vfx[i])
-            //let tempCard = winPaire[i];
-            //const jsConfetti = new JSConfetti({ tempCard })
-
-           jsConfetti.addConfetti() 
-            //LE TIME OUT N'EST NECESSAIRE QUE POUR L'ANIM FAITE A LA MANO
-            //setTimeout(function () {
+           jsConfetti.addConfetti()             
             winCard.setAttribute("class", "img-card no-display");
-            winCard.setAttribute("data-type", "");
-            //}, 500)
+            winCard.setAttribute("data-type", "");            
         }
         if (paires === 10) {
             playOn = false;
@@ -138,12 +124,12 @@ function updateBest(){
     if(endTime<timeBest){
         timeBest=endTime;
         isBestTime=true;
-        localStorage.setItem("timeBest",timeBest)
+        localStorage.setItem("timeBest",timeBest)        
     }
     if(movesEnd<movesBest){
         movesBest=movesEnd;
         isBestMove=true;
-        localStorage.setItem("movesBest",movesBest)
+        localStorage.setItem("movesBest",movesBest)        
     }
 }
 function displayResult(){
@@ -155,8 +141,7 @@ function displayResult(){
 }
 
 function displayTime(timeInMS) {
-    // biome-ignore lint/style/useConst: <explanation>
-    let hh = Math.floor(timeInMS / 3600000);
+    const hh = Math.floor(timeInMS / 3600000);
     let mm = "";
     let ss = "";
     if (Math.floor((timeInMS % 3600000) / 60000) < 10) {
@@ -208,7 +193,6 @@ for (const card of allCards) {
                 selectTimeCurrent.innerHTML = displayTime(timeCurrent);
             }, 1000)
             isFirst = false;
-
         }
         if (card.classList.contains("flipped") || !playOn) { }
         else if (flippedCard === 2) { }
@@ -233,7 +217,15 @@ for (const card of allCards) {
 }
 function openPopup() {
     const popup = document.querySelector(".pop-container");
-    popup.style.display = "flex";  
+    popup.style.display = "flex";
+    if(isBestTime){
+        vfxOnBest(selectTimeCurrentPop);
+        console.log("vfxOnBest reached")
+    }
+    if(isBestMove){
+        vfxOnBest(selectMovesCurrentPop);
+        console.log("vfxOnBest reached")
+    }
 }
 const closeBtn = document.querySelector(".closepopup-button");
 closeBtn.addEventListener('click', closePopup);
@@ -242,3 +234,39 @@ function closePopup() {
     const popup = document.querySelector(".pop-container");
     popup.style.display = "none";
 }
+
+function vfxOnBest(element){
+    let vfxi;
+    console.log(vfxi)
+    if (element===selectTimeCurrentPop){
+        vfxi=vfxA;
+        console.log(vfxi)
+    }
+    else if (element===selectMovesCurrentPop){
+        vfxi=vfxB;
+        console.log(vfxi)
+    }
+    const tempObject = element.getBoundingClientRect();
+    const tempTop = (tempObject.top + tempObject.bottom) / 2;
+    const tempLeft = tempObject.right;
+    vfxi.style.top = `${Math.floor(tempTop)}px`;
+    vfxi.style.left = `${Math.floor(tempLeft)}px`;
+    console.log(vfxi)
+    displayVFX(vfxi)
+}
+//for (let i = 0; i < 2; i++) {
+
+            // CODE DE L'ANIMATION FAITE A LA MANO
+            // let tempObject = winPaire[i].getBoundingClientRect();
+            // let tempTop = (tempObject.top + tempObject.bottom) / 2
+            // let tempLeft = tempObject.left
+            // let tempWidth = tempObject.right - tempObject.left
+            // vfx[i].style.top = `${Math.floor(tempTop)}px`
+            // vfx[i].style.left = `${Math.floor(tempLeft)}px`
+            // vfx[i].style.width = `${Math.floor(tempWidth)}px`
+            //displayVFX(vfx[i])
+            //let tempCard = winPaire[i];
+            //const jsConfetti = new JSConfetti({ tempCard })
+            //LE TIME OUT N'EST NECESSAIRE QUE POUR L'ANIM FAITE A LA MANO
+            //setTimeout(function () {
+            //}, 500)

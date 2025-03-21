@@ -26,7 +26,7 @@ body {
     position: fixed;
     z-index: 1;
     height: auto;
-    width: 15vw;
+    width: 3vw;
     transform-origin: top center;
 }
 
@@ -152,8 +152,8 @@ footer {
 }
 
 .appearVFX {
-    animation: appearVFX 1s linear 1;
-    animation-fill-mode: forwards;
+    /* animation: appearVFX 1s linear 1; */
+    /* animation-fill-mode: forwards; */
 }
 
 .img-card-active {
@@ -527,7 +527,7 @@ footer {
 
     90% {
         transform: scale(0.90) rotate(1620deg);
-        opacity: 1;
+        
     }
 
     93% {
@@ -544,6 +544,6 @@ footer {
 
     100% {
         transform: scale(1) rotate(1800deg);
-        opacity: 0;
+        
     }
 }
