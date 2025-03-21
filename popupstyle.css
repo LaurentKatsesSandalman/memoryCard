@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 :root {
 	--color-bgpop: #60a3fa;
-	--color-button: #fa7474;
+	--color-button: blueviolet;
+	--color-best: grey;
 	--color-best: #5c5c5b;
-	--color-area: #3efa05;
+	--color-area: blueviolet;
 	--color-set: #292929;
 	--color-sh1: #f6f8f6;
 	--color-sh2: #fff;
-	--color-sh3: #7B96B8;
+	--color-sh3: #7b96b8;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 .pop-container {
-display:none ;
+	display: none;
 }
 
 .pop-container button {
@@ -32,22 +33,20 @@ display:none ;
 	border-radius: 10px;
 	transition: transform 0.2s;
 	width: 50%;
-	font-family: 'Metamorphous', sans-serif;
-
+	font-family: "Metamorphous", sans-serif;
 }
 
 .pop-score {
 	display: grid;
 	grid-template-columns: 2fr 2fr;
 	justify-content: center;
-	font-family: 'Martel', sans-serif;
+	font-family: "Martel", sans-serif;
 	margin: -4rem;
-	
 }
 
 .popup {
 	width: 90%;
-	height: 66%;
+	height: 75%;
 	background: var(--color-bgpop);
 	border-radius: 1rem;
 	position: absolute;
@@ -61,12 +60,11 @@ display:none ;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-
+	margin-top: 1.5rem;
 }
 
 .popup h2 {
-
-	font-family: "Metamorphous",  Impact, sans-serif;
+	font-family: "Metamorphous", Impact, sans-serif;
 	font-size: 3.5rem;
 	padding-top: 2rem;
 }
@@ -80,11 +78,9 @@ display:none ;
 .pop-current {
 	font-size: 0.8rem;
 	padding: 0.1rem;
-	
 }
 
 .area {
-
 	text-align: center;
 	font-size: 2em;
 	color: var(--color-area);
@@ -95,7 +91,8 @@ display:none ;
 
 @keyframes blur {
 	from {
-		text-shadow: 0px 0px 10px var(--color-sh1),
+		text-shadow:
+			0px 0px 10px var(--color-sh1),
 			0px 0px 10px var(--color-sh2),
 			0px 0px 25px var(--color-sh2),
 			0px 0px 25px var(--color-sh2),
