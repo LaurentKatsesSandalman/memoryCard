@@ -33,6 +33,7 @@ const selectBestTimePop = document.querySelector(".best-time-pop")
 const giveupBtn = document.querySelector(".giveup-main")
 const cancelBtn = document.querySelector(".giveup-no")
 const confirmBtn = document.querySelector(".giveup-yes")
+const vfx = document.querySelectorAll(".vfx")
 //FONCTIONS
 function remove(element) {
     element.setAttribute("class", `remove ${element.getAttribute("class")}`)
@@ -43,6 +44,14 @@ function activate(element) {
         setTimeout(() => {
         element.classList.remove("appear");
     }, 1501)
+}
+function displayVFX(element) {
+    element.classList.remove("remove");
+    element.setAttribute("class", `appearVFX ${element.getAttribute("class")}`)
+    setTimeout(() => {
+        element.classList.remove("appearVFX");
+        element.setAttribute("class", `remove ${element.getAttribute("class")}`)
+    }, 1000)
 }
 function shuffle(cardlist) {
     let buffer;
@@ -76,12 +85,31 @@ function compare() {
     if (cardAId === cardBId) {
         paires++;
         const winPaire = document.querySelectorAll(".flipped")
+
         // biome-ignore lint/style/useConst: <explanation>
         for (let winCard of winPaire) {
             const jsConfetti = new JSConfetti({ winCard })
+
+        //for (let i = 0; i < 2; i++) {
+
+            // CODE DE L'ANIMATION FAITE A LA MANO
+            // let tempObject = winPaire[i].getBoundingClientRect();
+            // let tempTop = (tempObject.top + tempObject.bottom) / 2
+            // let tempLeft = tempObject.left
+            // let tempWidth = tempObject.right - tempObject.left
+            // vfx[i].style.top = `${Math.floor(tempTop)}px`
+            // vfx[i].style.left = `${Math.floor(tempLeft)}px`
+            // vfx[i].style.width = `${Math.floor(tempWidth)}px`
+            //displayVFX(vfx[i])
+            //let tempCard = winPaire[i];
+            //const jsConfetti = new JSConfetti({ tempCard })
+
             jsConfetti.addConfetti()
-            winCard.setAttribute("class", "img-card no-display");
-            winCard.setAttribute("data-type", "");
+            //LE TIME OUT N'EST NECESSAIRE QUE POUR L'ANIM FAITE A LA MANO
+            //setTimeout(function () {
+            winPaire[i].setAttribute("class", "img-card no-display");
+            winPaire[i].setAttribute("data-type", "");
+            //}, 500)
         }
         if (paires === 10) {
             playOn = false;
@@ -181,6 +209,7 @@ for (const card of allCards) {
                 selectTimeCurrent.innerHTML = displayTime(timeCurrent);
             }, 1000)
             isFirst = false;
+
         }
         if (card.classList.contains("flipped") || !playOn) { }
         else if (flippedCard === 2) { }
