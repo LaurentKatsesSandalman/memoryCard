@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&display=swap");
 
 :root {
-    --color-shadow: #454747;
-    --color-bg: #aae4ff;
-    --color-bggame: #76cafa;
-    /* les couleur ne sont pas bloquer je travail encore dessus  */
-    --color-best: grey;
-    --color-footer: blueviolet;
-    --color-span: deeppink;
+	--color-shadow: blueviolet;
+	--color-bg: #e3f3fa;
+	--color-bggame: #60a3fa;
+	/* les couleur ne sont pas bloquer je travail encore dessus  */
+	--color-best: grey;
+	--color-footer: blueviolet;
+	--color-span: deeppink;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background-color: var(--color-bg);
+	background-color: var(--color-bg);
 }
 
 .vfx {
@@ -31,124 +31,119 @@ body {
 }
 
 .regles {
-    text-align: center;
-    font-family: 'Martel', sans-serif;
-    font-size: 0.75rem;
-    padding: 1rem;
+	text-align: center;
+	font-family: "Martel", sans-serif;
+	font-size: 0.75rem;
+	padding: 1rem;
 }
 
 h1 {
-    font-family: 'Irish Grover', sans-serif;
-    text-align: center;
-    font-size: 4rem;
-    text-shadow: 0 1px 10px var(--color-shadow);
+	font-family: "Irish Grover", sans-serif;
+	text-align: center;
+	font-size: 4rem;
+	text-shadow: 0 1px 10px var(--color-shadow);
 }
 
 .container {
-    width: min(85%, 500px);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: auto;
-    padding: 1rem;
-    background-color: var(--color-bggame);
-    aspect-ratio: 4/5;
-    border-radius: 5%;
+	width: min(85%, 500px);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin: auto;
+	padding: 1rem;
+	background-color: var(--color-bggame);
+	aspect-ratio: 4 / 5;
+	border-radius: 5%;
 }
 
 .container img {
-    width: 95%;
-    aspect-ratio: 1/1;
-    padding: 5%;
-    justify-self: center;
-    border-radius: 15%;
-    
+	width: 95%;
+	aspect-ratio: 1 / 1;
+	padding: 5%;
+	justify-self: center;
+	border-radius: 15%;
 }
 
 .arrayScore {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    padding: 1rem;
-
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	padding: 1rem;
 }
 
 .arrayScore p {
-    justify-self: center;
-
+	justify-self: center;
 }
 
 .best {
-    color: var(--color-best);
+	color: var(--color-best);
 }
 
 footer {
-    position: absolute;
-    top: 95vh;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 5vh;
-    text-align: center;
-    padding: 1.5vh 0 0 0;
-    background-color: var(--color-footer);
-
+	position: absolute;
+	top: 95vh;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 5vh;
+	text-align: center;
+	padding: 1.5vh 0 0 0;
+	background-color: var(--color-footer);
 }
 
 .footer-link {
-    text-decoration: none;
-    color: var(--color-bg);
+	text-decoration: none;
+	color: var(--color-bg);
 }
 
 .freepik {
-    color: var(--color-span)
+	color: var(--color-span);
 }
 
 .play-btn {
-    display: block;
-    grid-column: span 4;
-    grid-row: span 5;
-    align-self: center;
-    justify-self: center;
-    background-color: var(--color-footer);
-    padding: 1rem;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    border: 2px solid var(--color-shadow);
+	display: block;
+	grid-column: span 4;
+	grid-row: span 5;
+	align-self: center;
+	justify-self: center;
+	background-color: var(--color-footer);
+	padding: 1rem;
+	border-radius: 50px;
+	font-size: 1.5rem;
+	border: 2px solid var(--color-shadow);
 }
 
 .giveup-container {
-    display: flex;
-    justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .giveup {
-    display: block;
-    background-color: var(--color-footer);
-    padding: 0.5rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    border: 2px solid var(--color-shadow);
-    margin: 5px;
+	display: block;
+	background-color: var(--color-footer);
+	padding: 0.5rem;
+	border-radius: 50px;
+	font-size: 1rem;
+	border: 2px solid var(--color-shadow);
+	margin: 5px;
 }
 
 .giveup-no {
-    background-color: var(--color-span);
+	background-color: var(--color-span);
 }
 
 .remove {
-    display: none;
+	display: none;
 }
-
 
 /* animations */
 .no-display {
-    animation: validpair 0.5s linear 1;
-    animation-fill-mode: forwards;
+	animation: validpair 0.5s linear 1;
+	animation-fill-mode: forwards;
 }
 
 .appear {
-    animation: appear 1s linear 1;
+	animation: appear 1s linear 1;
 }
 
 .appearVFX {
@@ -157,393 +152,407 @@ footer {
 }
 
 .img-card-active {
-    animation: flip 0.5s linear 1;
+	animation: flip 0.5s linear 1;
 }
 
 @keyframes flip {
-    0% {
-        transform: scaleX(1)
-    }
+	0% {
+		transform: scaleX(1);
+	}
 
-    25% {
-        transform: scaleX(0.5)
-    }
+	25% {
+		transform: scaleX(0.5);
+	}
 
-    50% {
-        transform: scaleX(0)
-    }
+	50% {
+		transform: scaleX(0);
+	}
 
-    75% {
-        transform: scaleX(0.5)
-    }
+	75% {
+		transform: scaleX(0.5);
+	}
 
-    100% {
-        transform: scaleX(1)
-    }
+	100% {
+		transform: scaleX(1);
+	}
 }
 
 @keyframes validpair {
-    0% {
-        transform: rotate(3deg);
-        opacity: 1;
-    }
+	0% {
+		transform: rotate(3deg);
+		opacity: 1;
+	}
 
-    5% {
-        transform: rotate(-3deg);
-        opacity: 1;
-    }
+	5% {
+		transform: rotate(-3deg);
+		opacity: 1;
+	}
 
-    10% {
-        transform: rotate(3deg);
-        opacity: 1;
-    }
+	10% {
+		transform: rotate(3deg);
+		opacity: 1;
+	}
 
-    15% {
-        transform: rotate(-3deg);
-        opacity: 1;
-    }
+	15% {
+		transform: rotate(-3deg);
+		opacity: 1;
+	}
 
-    20% {
-        transform: rotate(3deg);
-        opacity: 1;
-    }
+	20% {
+		transform: rotate(3deg);
+		opacity: 1;
+	}
 
-    100% {
-
-        opacity: 0;
-    }
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes appear {
-    00% {
-        transform: scale(0) rotate(0deg);
-    }
+	00% {
+		transform: scale(0) rotate(0deg);
+	}
 
-    03% {
-        transform: scale(0.025) rotate(45deg);
-    }
+	03% {
+		transform: scale(0.025) rotate(45deg);
+	}
 
-    05% {
-        transform: scale(0.05) rotate(90deg);
-    }
+	05% {
+		transform: scale(0.05) rotate(90deg);
+	}
 
-    08% {
-        transform: scale(0.075) rotate(135deg);
-    }
+	08% {
+		transform: scale(0.075) rotate(135deg);
+	}
 
-    10% {
-        transform: scale(0.1) rotate(180deg);
-    }
+	10% {
+		transform: scale(0.1) rotate(180deg);
+	}
 
-    13% {
-        transform: scale(0.125) rotate(225deg);
-    }
+	13% {
+		transform: scale(0.125) rotate(225deg);
+	}
 
-    15% {
-        transform: scale(0.15) rotate(270deg);
-    }
+	15% {
+		transform: scale(0.15) rotate(270deg);
+	}
 
-    18% {
-        transform: scale(0.175) rotate(315deg);
-    }
+	18% {
+		transform: scale(0.175) rotate(315deg);
+	}
 
-    20% {
-        transform: scale(0.2) rotate(360deg);
-    }
+	20% {
+		transform: scale(0.2) rotate(360deg);
+	}
 
-    23% {
-        transform: scale(0.225) rotate(405deg);
-    }
+	23% {
+		transform: scale(0.225) rotate(405deg);
+	}
 
-    25% {
-        transform: scale(0.25) rotate(450deg);
-    }
+	25% {
+		transform: scale(0.25) rotate(450deg);
+	}
 
-    28% {
-        transform: scale(0.275) rotate(495deg);
-    }
+	28% {
+		transform: scale(0.275) rotate(495deg);
+	}
 
-    30% {
-        transform: scale(0.3) rotate(540deg);
-    }
+	30% {
+		transform: scale(0.3) rotate(540deg);
+	}
 
-    33% {
-        transform: scale(0.325) rotate(585deg);
-    }
+	33% {
+		transform: scale(0.325) rotate(585deg);
+	}
 
-    35% {
-        transform: scale(0.35) rotate(630deg);
-    }
+	35% {
+		transform: scale(0.35) rotate(630deg);
+	}
 
-    38% {
-        transform: scale(0.375) rotate(675deg);
-    }
+	38% {
+		transform: scale(0.375) rotate(675deg);
+	}
 
-    40% {
-        transform: scale(0.4) rotate(720deg);
-    }
+	40% {
+		transform: scale(0.4) rotate(720deg);
+	}
 
-    43% {
-        transform: scale(0.425) rotate(765deg);
-    }
+	43% {
+		transform: scale(0.425) rotate(765deg);
+	}
 
-    45% {
-        transform: scale(0.45) rotate(810deg);
-    }
+	45% {
+		transform: scale(0.45) rotate(810deg);
+	}
 
-    48% {
-        transform: scale(0.475) rotate(855deg);
-    }
+	48% {
+		transform: scale(0.475) rotate(855deg);
+	}
 
-    50% {
-        transform: scale(0.5) rotate(900deg);
-    }
+	50% {
+		transform: scale(0.5) rotate(900deg);
+	}
 
-    53% {
-        transform: scale(0.525) rotate(945deg);
-    }
+	53% {
+		transform: scale(0.525) rotate(945deg);
+	}
 
-    55% {
-        transform: scale(0.55) rotate(990deg);
-    }
+	55% {
+		transform: scale(0.55) rotate(990deg);
+	}
 
-    58% {
-        transform: scale(0.575) rotate(1035deg);
-    }
+	58% {
+		transform: scale(0.575) rotate(1035deg);
+	}
 
-    60% {
-        transform: scale(0.6) rotate(1080deg);
-    }
+	60% {
+		transform: scale(0.6) rotate(1080deg);
+	}
 
-    63% {
-        transform: scale(0.625) rotate(1125deg);
-    }
+	63% {
+		transform: scale(0.625) rotate(1125deg);
+	}
 
-    65% {
-        transform: scale(0.65) rotate(1170deg);
-    }
+	65% {
+		transform: scale(0.65) rotate(1170deg);
+	}
 
-    68% {
-        transform: scale(0.675) rotate(1215deg);
-    }
+	68% {
+		transform: scale(0.675) rotate(1215deg);
+	}
 
-    70% {
-        transform: scale(0.7) rotate(1260deg);
-    }
+	70% {
+		transform: scale(0.7) rotate(1260deg);
+	}
 
-    73% {
-        transform: scale(0.725) rotate(1305deg);
-    }
+	73% {
+		transform: scale(0.725) rotate(1305deg);
+	}
 
-    75% {
-        transform: scale(0.75) rotate(1350deg);
-    }
+	75% {
+		transform: scale(0.75) rotate(1350deg);
+	}
 
-    78% {
-        transform: scale(0.775) rotate(1395deg);
-    }
+	78% {
+		transform: scale(0.775) rotate(1395deg);
+	}
 
-    80% {
-        transform: scale(0.8) rotate(1440deg);
-    }
+	80% {
+		transform: scale(0.8) rotate(1440deg);
+	}
 
-    83% {
-        transform: scale(0.825) rotate(1485deg);
-    }
+	83% {
+		transform: scale(0.825) rotate(1485deg);
+	}
 
-    85% {
-        transform: scale(0.85) rotate(1530deg);
-    }
+	85% {
+		transform: scale(0.85) rotate(1530deg);
+	}
 
-    88% {
-        transform: scale(0.875) rotate(1575deg);
-    }
+	88% {
+		transform: scale(0.875) rotate(1575deg);
+	}
 
-    90% {
-        transform: scale(0.90) rotate(1620deg);
-    }
+	90% {
+		transform: scale(0.9) rotate(1620deg);
+	}
 
-    93% {
-        transform: scale(0.925) rotate(1665deg);
-    }
+	93% {
+		transform: scale(0.925) rotate(1665deg);
+	}
 
-    95% {
-        transform: scale(0.95) rotate(1710deg);
-    }
+	95% {
+		transform: scale(0.95) rotate(1710deg);
+	}
 
-    98% {
-        transform: scale(0.975) rotate(1755deg);
-    }
+	98% {
+		transform: scale(0.975) rotate(1755deg);
+	}
 
-    100% {
-        transform: scale(1) rotate(1800deg);
-    }
+	100% {
+		transform: scale(1) rotate(1800deg);
+	}
 }
 
 @keyframes appearVFX {
-    00% {
-        transform: scale(0) rotate(0deg);
-    }
+	00% {
+		transform: scale(0) rotate(0deg);
+	}
 
-    03% {
-        transform: scale(0.025) rotate(45deg);
-    }
+	03% {
+		transform: scale(0.025) rotate(45deg);
+	}
 
-    05% {
-        transform: scale(0.05) rotate(90deg);
-    }
+	05% {
+		transform: scale(0.05) rotate(90deg);
+	}
 
-    08% {
-        transform: scale(0.075) rotate(135deg);
-    }
+	08% {
+		transform: scale(0.075) rotate(135deg);
+	}
 
-    10% {
-        transform: scale(0.1) rotate(180deg);
-    }
+	10% {
+		transform: scale(0.1) rotate(180deg);
+	}
 
-    13% {
-        transform: scale(0.125) rotate(225deg);
-    }
+	13% {
+		transform: scale(0.125) rotate(225deg);
+	}
 
-    15% {
-        transform: scale(0.15) rotate(270deg);
-    }
+	15% {
+		transform: scale(0.15) rotate(270deg);
+	}
 
-    18% {
-        transform: scale(0.175) rotate(315deg);
-    }
+	18% {
+		transform: scale(0.175) rotate(315deg);
+	}
 
-    20% {
-        transform: scale(0.2) rotate(360deg);
-    }
+	20% {
+		transform: scale(0.2) rotate(360deg);
+	}
 
-    23% {
-        transform: scale(0.225) rotate(405deg);
-    }
+	23% {
+		transform: scale(0.225) rotate(405deg);
+	}
 
-    25% {
-        transform: scale(0.25) rotate(450deg);
-    }
+	25% {
+		transform: scale(0.25) rotate(450deg);
+	}
 
-    28% {
-        transform: scale(0.275) rotate(495deg);
-    }
+	28% {
+		transform: scale(0.275) rotate(495deg);
+	}
 
-    30% {
-        transform: scale(0.3) rotate(540deg);
-    }
+	30% {
+		transform: scale(0.3) rotate(540deg);
+	}
 
-    33% {
-        transform: scale(0.325) rotate(585deg);
-    }
+	33% {
+		transform: scale(0.325) rotate(585deg);
+	}
 
-    35% {
-        transform: scale(0.35) rotate(630deg);
-    }
+	35% {
+		transform: scale(0.35) rotate(630deg);
+	}
 
-    38% {
-        transform: scale(0.375) rotate(675deg);
-    }
+	38% {
+		transform: scale(0.375) rotate(675deg);
+	}
 
-    40% {
-        transform: scale(0.4) rotate(720deg);
-    }
+	40% {
+		transform: scale(0.4) rotate(720deg);
+	}
 
-    43% {
-        transform: scale(0.425) rotate(765deg);
-    }
+	43% {
+		transform: scale(0.425) rotate(765deg);
+	}
 
-    45% {
-        transform: scale(0.45) rotate(810deg);
-    }
+	45% {
+		transform: scale(0.45) rotate(810deg);
+	}
 
-    48% {
-        transform: scale(0.475) rotate(855deg);
-    }
+	48% {
+		transform: scale(0.475) rotate(855deg);
+	}
 
-    50% {
-        transform: scale(0.5) rotate(900deg);
-    }
+	50% {
+		transform: scale(0.5) rotate(900deg);
+	}
 
-    53% {
-        transform: scale(0.525) rotate(945deg);
-    }
+	53% {
+		transform: scale(0.525) rotate(945deg);
+	}
 
-    55% {
-        transform: scale(0.55) rotate(990deg);
-    }
+	55% {
+		transform: scale(0.55) rotate(990deg);
+	}
 
-    58% {
-        transform: scale(0.575) rotate(1035deg);
-    }
+	58% {
+		transform: scale(0.575) rotate(1035deg);
+	}
 
-    60% {
-        transform: scale(0.6) rotate(1080deg);
-    }
+	60% {
+		transform: scale(0.6) rotate(1080deg);
+	}
 
-    63% {
-        transform: scale(0.625) rotate(1125deg);
-    }
+	63% {
+		transform: scale(0.625) rotate(1125deg);
+	}
 
-    65% {
-        transform: scale(0.65) rotate(1170deg);
-    }
+	65% {
+		transform: scale(0.65) rotate(1170deg);
+	}
 
-    68% {
-        transform: scale(0.675) rotate(1215deg);
-    }
+	68% {
+		transform: scale(0.675) rotate(1215deg);
+	}
 
-    70% {
-        transform: scale(0.7) rotate(1260deg);
-    }
+	70% {
+		transform: scale(0.7) rotate(1260deg);
+	}
 
-    73% {
-        transform: scale(0.725) rotate(1305deg);
-    }
+	73% {
+		transform: scale(0.725) rotate(1305deg);
+	}
 
-    75% {
-        transform: scale(0.75) rotate(1350deg);
-    }
+	75% {
+		transform: scale(0.75) rotate(1350deg);
+	}
 
-    78% {
-        transform: scale(0.775) rotate(1395deg);
-    }
+	78% {
+		transform: scale(0.775) rotate(1395deg);
+	}
 
-    80% {
-        transform: scale(0.8) rotate(1440deg);
-    }
+	80% {
+		transform: scale(0.8) rotate(1440deg);
+	}
 
-    83% {
-        transform: scale(0.825) rotate(1485deg);
-    }
+	83% {
+		transform: scale(0.825) rotate(1485deg);
+	}
 
-    85% {
-        transform: scale(0.85) rotate(1530deg);
-    }
+	85% {
+		transform: scale(0.85) rotate(1530deg);
+	}
 
-    88% {
-        transform: scale(0.875) rotate(1575deg);
-    }
+	88% {
+		transform: scale(0.875) rotate(1575deg);
+	}
 
+<<<<<<< HEAD
     90% {
         transform: scale(0.90) rotate(1620deg);
         
     }
+=======
+	90% {
+		transform: scale(0.9) rotate(1620deg);
+		opacity: 1;
+	}
+>>>>>>> origin/optidizSEB
 
-    93% {
-        transform: scale(0.925) rotate(1665deg);
-    }
+	93% {
+		transform: scale(0.925) rotate(1665deg);
+	}
 
-    95% {
-        transform: scale(0.95) rotate(1710deg);
-    }
+	95% {
+		transform: scale(0.95) rotate(1710deg);
+	}
 
-    98% {
-        transform: scale(0.975) rotate(1755deg);
-    }
+	98% {
+		transform: scale(0.975) rotate(1755deg);
+	}
 
+<<<<<<< HEAD
     100% {
         transform: scale(1) rotate(1800deg);
         
     }
 }
+=======
+	100% {
+		transform: scale(1) rotate(1800deg);
+		opacity: 0;
+	}
+}
+>>>>>>> origin/optidizSEB
