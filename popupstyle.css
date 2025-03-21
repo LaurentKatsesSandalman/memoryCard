@@ -8,6 +8,9 @@
 	--color-best: #5c5c5b;
 	--color-area: #3efa05;
 	--color-set: #292929;
+	--color-sh1: #f6f8f6;
+	--color-sh2: #fff;
+	--color-sh3: #7B96B8;
 }
 
 * {
@@ -87,28 +90,28 @@ display:none ;
 	color: var(--color-area);
 	text-transform: uppercase;
 	animation: blur .75s ease-out infinite;
-	text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+	text-shadow: 0px 0px 5px var(--color-sh2), 0px 0px 7px var(--color-sh2);
 }
 
 @keyframes blur {
 	from {
-		text-shadow: 0px 0px 10px #f6f8f6,
-			0px 0px 10px #fff,
-			0px 0px 25px #fff,
-			0px 0px 25px #fff,
-			0px 0px 25px #fff,
-			0px 0px 25px #fff,
-			0px 0px 25px #fff,
-			0px 0px 25px #fff,
-			0px 0px 50px #fff,
-			0px 0px 50px #fff,
-			0px 0px 50px #7B96B8,
-			0px 0px 150px #7B96B8,
-			0px 10px 100px #7B96B8,
-			0px 10px 100px #7B96B8,
-			0px 10px 100px #7B96B8,
-			0px 10px 100px #7B96B8,
-			0px -10px 100px #7B96B8,
-			0px -10px 100px #7B96B8;
+		text-shadow: 0px 0px 10px var(--color-sh1),
+			0px 0px 10px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 25px var(--color-sh2),
+			0px 0px 50px var(--color-sh2),
+			0px 0px 50px var(--color-sh2),
+			0px 0px 50px var(--color-sh3),
+			0px 0px 150px var(--color-sh3),
+			0px 10px 100px var(--color-sh3),
+			0px 10px 100px var(--color-sh3),
+			0px 10px 100px var(--color-sh3),
+			0px 10px 100px var(--color-sh3),
+			0px -10px 100px var(--color-sh3),
+			0px -10px 100px var(--color-sh3);
 	}
 }
